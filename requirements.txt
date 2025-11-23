@@ -1,0 +1,164 @@
+# Requirements para CompriAssist
+
+# ============================================
+# CORE DEPENDENCIES
+# ============================================
+
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+# Alternativa: flask==3.0.0
+
+# CORS & Security
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ============================================
+# MÓDULO 1: CHATBOT & PLN
+# ============================================
+
+# Natural Language Processing
+nltk==3.8.1
+spacy==3.7.2
+# Descargar modelos: python -m spacy download es_core_news_sm
+
+# Streamlit (interfaz alternativa)
+streamlit==1.28.2
+
+# ============================================
+# MÓDULO 2: SISTEMA DE RECOMENDACIÓN
+# ============================================
+
+# Machine Learning
+scikit-learn==1.3.2
+numpy==1.24.3
+pandas==2.1.3
+scipy==1.11.4
+
+# Métricas de recomendación
+# (implementadas manualmente o via scikit-learn)
+
+# ============================================
+# MÓDULO 3: ANÁLISIS DE SENTIMIENTOS
+# ============================================
+
+# Transformers & Deep Learning
+transformers==4.35.2
+torch==2.1.1
+# Para GPU: torch==2.1.1+cu118
+
+# HuggingFace datasets
+datasets==2.15.0
+
+# Modelos tradicionales ML (ya incluidos en scikit-learn)
+
+# ============================================
+# MÓDULO 4: BÚSQUEDA VISUAL
+# ============================================
+
+# Deep Learning para Visión
+tensorflow==2.15.0
+# O PyTorch: torchvision==0.16.1
+keras==2.15.0
+
+# Procesamiento de imágenes
+Pillow==10.1.0
+opencv-python==4.8.1.78
+
+# Embeddings y búsqueda
+# FAISS (opcional para búsqueda rápida)
+# faiss-cpu==1.7.4
+
+# ============================================
+# MÓDULO 5: IA GENERATIVA
+# ============================================
+
+# Ya incluido en transformers
+# Modelos específicos: T5, GPT-2
+# sentencepiece==0.1.99  # Para algunos modelos
+
+# ============================================
+# BASE DE DATOS
+# ============================================
+
+# PostgreSQL
+psycopg2-binary==2.9.9
+
+# ORM
+sqlalchemy==2.0.23
+
+# Supabase (opcional)
+supabase==2.0.3
+
+# ============================================
+# UTILIDADES
+# ============================================
+
+# HTTP Requests
+requests==2.31.0
+httpx==0.25.2
+
+# Variables de entorno
+python-dotenv==1.0.0
+
+# Validación de datos
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# Logging y debugging
+loguru==0.7.2
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# ============================================
+# DESARROLLO
+# ============================================
+
+# Code quality
+black==23.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Notebook (para experimentación)
+jupyter==1.0.0
+ipykernel==6.27.1
+
+# ============================================
+# PRODUCCIÓN
+# ============================================
+
+# WSGI server
+gunicorn==21.2.0
+
+# Monitoring
+sentry-sdk==1.38.0
+
+# Cache (opcional)
+redis==5.0.1
+
+# ============================================
+# NOTAS DE INSTALACIÓN
+# ============================================
+
+# Instalar todo:
+# pip install -r requirements.txt
+
+# Solo desarrollo:
+# pip install -r requirements.txt --no-deps
+
+# Descargar modelos de SpaCy:
+# python -m spacy download es_core_news_sm
+# python -m spacy download en_core_web_sm
+
+# Descargar datos de NLTK:
+# python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+
+# ============================================
+# VERSIONES DE PYTHON SOPORTADAS
+# ============================================
+# Python 3.9, 3.10, 3.11
+# Recomendado: Python 3.10

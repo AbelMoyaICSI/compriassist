@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ComprIAssist - Asistente Inteligente de Compras de Productos E-commerce basado en Inteligencia Artificial">
+    <meta name="keywords" content="e-commerce, productos, inteligencia artificial, chatbot, recomendaciones, análisis de reseñas, búsqueda visual">
+    <meta name="author" content="UPAO - Ingeniería de Sistemas e IA">
+    <title>ComprIAssist | Asistente IA para Tiendas de Productos Online</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <!-- ============================================ -->
+    <!-- NAVEGACIÓN -->
+    <!-- ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Compr<strong>IAssist</strong></span>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#modulos" class="nav-link">Módulos IA</a></li>
+                    <li><a href="#caracteristicas" class="nav-link">Características</a></li>
+                    <li><a href="#demo" class="nav-link">Demo</a></li>
+                    <li><a href="#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <button class="cta-button">Probar Ahora</button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN HERO -->
+    <!-- ============================================ -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <span class="badge">
+                        <i class="fas fa-rocket"></i> Innovación con IA
+                    </span>
+                    <h1 class="hero-title">
+                        Encuentra el <span class="gradient-text">Producto Perfecto</span> con Inteligencia Artificial
+                    </h1>
+                    <p class="hero-description">
+                        ComprIAssist integra 5 módulos de IA avanzada para revolucionar tu tienda online de productos: 
+                        chatbot para consultas, recomendaciones de artículos, análisis de reseñas de productos, 
+                        búsqueda visual de artículos similares y descripciones automáticas de catálogo.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-play-circle"></i> Ver Demo
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-book"></i> Documentación
+                        </button>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Módulos de IA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">84%</span>
+                            <span class="stat-label">Precisión BERT</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">72%</span>
+                            <span class="stat-label">Accuracy CNN</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-robot"></i>
+                        <p>Chatbot IA</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Recomendaciones</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-eye"></i>
+                        <p>Búsqueda Visual</p>
+                    </div>
+                    <div class="central-image">
+                        <div class="glow-effect"></div>
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN: MÓDULOS DE IA -->
+    <!-- ============================================ -->
+    <section id="modulos" class="modules-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Tecnología Avanzada</span>
+                <h2 class="section-title">Los 5 Módulos de <span class="gradient-text">Inteligencia Artificial</span></h2>
+                <p class="section-description">
+                    Cada módulo potencia tu catálogo de productos con tecnologías de vanguardia en Machine Learning y Deep Learning
+                </p>
+            </div>
+            
+            <div class="modules-grid">
+                <!-- Módulo 1: Chatbot -->
+                <div class="module-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="module-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="module-title">Chatbot Conversacional</h3>
+                    <p class="module-description">
+                        Interfaz inteligente para consultas sobre productos con procesamiento de lenguaje natural (PLN) 
+                        usando NLTK y SpaCy. Ayuda a los clientes a encontrar artículos en el catálogo.
+                    </p>
+                    <div class="module-tech">
+                        <span class="tech-tag">NLTK</span>
+                        <span class="tech-tag">SpaCy</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    <div class="module-status">
+                        <div class="status-bar" style="--progress: 60%"></div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 2: Recomendador -->
+                <div class="module-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="module-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="module-title">Sistema de Recomendación</h3>
+                    <p class="module-description">
+                        Recomienda productos del catálogo basándose en preferencias del usuario. 
+                        Algoritmos ML: Random Forest, K-means, Regresión Logística. Métricas MAP@K y NDCG.
+                    </p>
+                    <div class="module-tech">
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Random Forest</span>
+                        <span class="tech-tag">K-means</span>
+                    </div>
+                    <div class="module-status">
+                        <div class="status-bar" style="--progress: 55%"></div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 3: Análisis de Reseñas -->
+                <div class="module-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="module-icon">
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h3 class="module-title">Análisis de Reseñas de Productos</h3>
+                    <p class="module-description">
+                        Analiza opiniones de clientes sobre productos con BERT (84% accuracy), SVM y Naive Bayes. 
+                        Detecta reseñas falsas para mantener la confianza en el catálogo.
+                    </p>
+                    <div class="module-tech">
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">HuggingFace</span>
+                        <span class="tech-tag">SVM</span>
+                    </div>
+                    <div class="module-status">
+                        <div class="status-bar" style="--progress: 84%"></div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 4: Búsqueda Visual -->
+                <div class="module-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="module-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="module-title">Búsqueda Visual de Productos</h3>
+                    <p class="module-description">
+                        Encuentra productos similares del catálogo con solo subir una foto. 
+                        CNNs y ResNet50 con embeddings visuales. 72% accuracy en clasificación.
+                    </p>
+                    <div class="module-tech">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">ResNet50</span>
+                        <span class="tech-tag">CNNs</span>
+                    </div>
+                    <div class="module-status">
+                        <div class="status-bar" style="--progress: 72%"></div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 5: IA Generativa -->
+                <div class="module-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="module-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="module-title">IA Generativa</h3>
+                    <p class="module-description">
+                        Genera descripciones atractivas para productos del catálogo automáticamente. 
+                        Modelos Transformer (T5, GPT-like) también potencian las respuestas del chatbot.
+                    </p>
+                    <div class="module-tech">
+                        <span class="tech-tag">T5</span>
+                        <span class="tech-tag">GPT</span>
+                        <span class="tech-tag">Transformers</span>
+                    </div>
+                    <div class="module-status">
+                        <div class="status-bar" style="--progress: 50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN: CARACTERÍSTICAS -->
+    <!-- ============================================ -->
+    <section id="caracteristicas" class="features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Funcionalidades</span>
+                <h2 class="section-title">¿Qué puede hacer <span class="gradient-text">ComprIAssist</span>?</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-comments-dollar"></i>
+                    <h3>Consultas Inteligentes</h3>
+                    <p>Pregunta sobre productos de forma natural y recibe respuestas precisas</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Recomendaciones Personalizadas</h3>
+                    <p>Sugerencias basadas en tus preferencias e historial de compras</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-smile"></i>
+                    <h3>Análisis de Sentimientos</h3>
+                    <p>Clasificación automática de reseñas: positivas, neutrales o negativas</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Detección de Fraudes</h3>
+                    <p>Identifica reseñas falsas con algoritmos de detección de anomalías</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-search-plus"></i>
+                    <h3>Búsqueda por Imagen</h3>
+                    <p>Sube una foto y encuentra productos visualmente similares</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="350">
+                    <i class="fas fa-edit"></i>
+                    <h3>Descripciones Automáticas</h3>
+                    <p>Generación de contenido con IA para productos nuevos</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Comparación de Productos</h3>
+                    <p>Compara hasta 4 artículos en una tabla interactiva</p>
+                </div>
+                
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="450">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>100% Responsive</h3>
+                    <p>Funciona perfectamente en desktop, tablet y móvil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN: DEMO INTERACTIVA -->
+    <!-- ============================================ -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Pruébalo</span>
+                <h2 class="section-title">Demo <span class="gradient-text">Interactiva</span></h2>
+                <p class="section-description">Experimenta con los módulos de IA en tiempo real</p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <button class="tab-button active" data-tab="chatbot">
+                        <i class="fas fa-robot"></i> Chatbot
+                    </button>
+                    <button class="tab-button" data-tab="sentiment">
+                        <i class="fas fa-heart"></i> Sentimientos
+                    </button>
+                    <button class="tab-button" data-tab="visual">
+                        <i class="fas fa-image"></i> Búsqueda Visual
+                    </button>
+                    <button class="tab-button" data-tab="generative">
+                        <i class="fas fa-magic"></i> Generativa
+                    </button>
+                </div>
+                
+                <div class="demo-content">
+                    <!-- Tab: Chatbot -->
+                    <div class="tab-pane active" id="chatbot">
+                        <div class="chatbot-demo">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message bot-message">
+                                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                                    <div class="text">¡Hola! Soy CompriAssist. ¿En qué puedo ayudarte hoy?</div>
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí...">
+                                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                            <div class="demo-note">
+                                <i class="fas fa-info-circle"></i> 
+                                Demo simulada - Los modelos reales se integrarán próximamente
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab: Sentiment Analysis -->
+                    <div class="tab-pane" id="sentiment">
+                        <div class="sentiment-demo">
+                            <textarea id="reviewText" placeholder="Escribe una reseña de producto aquí..."></textarea>
+                            <button class="analyze-button">
+                                <i class="fas fa-chart-bar"></i> Analizar Sentimiento
+                            </button>
+                            <div id="sentimentResult" class="result-box"></div>
+                            <div class="demo-note">
+                                <i class="fas fa-info-circle"></i> 
+                                Modelo BERT con 84% de precisión (en entrenamiento)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab: Visual Search -->
+                    <div class="tab-pane" id="visual">
+                        <div class="visual-demo">
+                            <div class="upload-area" id="uploadArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Arrastra una imagen o haz clic para seleccionar</p>
+                                <input type="file" id="imageUpload" accept="image/*" hidden>
+                            </div>
+                            <div id="visualResults" class="results-grid"></div>
+                            <div class="demo-note">
+                                <i class="fas fa-info-circle"></i> 
+                                ResNet50 con 72% accuracy en clasificación de productos
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab: Generative AI -->
+                    <div class="tab-pane" id="generative">
+                        <div class="generative-demo">
+                            <input type="text" id="productName" placeholder="Nombre del producto">
+                            <input type="text" id="productCategory" placeholder="Categoría (ej: ropa, electrónica)">
+                            <button class="generate-button">
+                                <i class="fas fa-wand-magic-sparkles"></i> Generar Descripción
+                            </button>
+                            <div id="generatedText" class="result-box"></div>
+                            <div class="demo-note">
+                                <i class="fas fa-info-circle"></i> 
+                                Modelo T5/GPT para generación de contenido (en desarrollo)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN: EQUIPO -->
+    <!-- ============================================ -->
+    <section id="equipo" class="team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Nosotros</span>
+                <h2 class="section-title">Equipo de <span class="gradient-text">Desarrollo</span></h2>
+                <p class="section-description">
+                    Proyecto desarrollado por estudiantes de Ingeniería de Sistemas e IA - UPAO
+                </p>
+            </div>
+            
+            <div class="instructor-card" data-aos="fade-up">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Docente Supervisor</h3>
+                <p>Sagastegui Chigne, Teobaldo Hernán</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Fabiano Araujo Aguilar</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="150">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Rodrigo Alexander Baldeón Julca</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Abel Moya Acosta</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="250">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Brandon Reyes Figueroa</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Luis Angel Salvador Mauricio</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="350">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Joan Solar Beltran</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Jan Terrones Llamo</h4>
+                </div>
+                
+                <div class="team-member" data-aos="fade-up" data-aos-delay="450">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Juan Carlos Vilca Jimènez</h4>
+                </div>
+            </div>
+            
+            <div class="university-info" data-aos="fade-up">
+                <img src="images/upao-logo.png" alt="UPAO Logo" class="university-logo" onerror="this.style.display='none'">
+                <h3>Universidad Privada Antenor Orrego</h3>
+                <p>Facultad de Ingeniería</p>
+                <p>Programa de Ingeniería de Sistemas e Inteligencia Artificial</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Trujillo, Perú - 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN: CONTACTO -->
+    <!-- ============================================ -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>¿Interesado en el proyecto?</h2>
+                    <p>
+                        CompriAssist es un proyecto académico en desarrollo. 
+                        Si tienes consultas o quieres colaborar, contáctanos.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="detail">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <h4>Institución</h4>
+                                <p>Universidad Privada Antenor Orrego</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Trujillo, La Libertad, Perú</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h4>Proyecto</h4>
+                                <p>Curso de Inteligencia Artificial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>Compri<strong>Assist</strong></span>
+                    </div>
+                    <p>Asistente Inteligente de Compras Online basado en IA</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Módulos</h4>
+                    <ul>
+                        <li>Chatbot Conversacional</li>
+                        <li>Sistema de Recomendación</li>
+                        <li>Análisis de Reseñas</li>
+                        <li>Búsqueda Visual</li>
+                        <li>IA Generativa</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tecnologías</h4>
+                    <ul>
+                        <li>Python & TensorFlow</li>
+                        <li>BERT & Transformers</li>
+                        <li>Scikit-learn</li>
+                        <li>FastAPI / Flask</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#modulos">Módulos IA</a></li>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ComprIAssist. Proyecto Académico - UPAO, Trujillo, Perú</p>
+                <p>Ingeniería de Sistemas e Inteligencia Artificial</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante "Volver arriba" -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
