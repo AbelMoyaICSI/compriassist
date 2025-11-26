@@ -58,13 +58,21 @@ datasets==2.15.0
 # ============================================
 
 # Deep Learning para Visión
-tensorflow==2.15.0
+#tensorflow==2.15.0
 # O PyTorch: torchvision==0.16.1
-keras==2.15.0
+#keras==2.15.0
 
 # Procesamiento de imágenes
-Pillow==10.1.0
-opencv-python==4.8.1.78
+#Pillow==10.1.0
+#opencv-python==4.8.1.78
+
+fastapi
+uvicorn
+python-multipart
+numpy
+pillow
+tensorflow
+faiss-cpu  
 
 # Embeddings y búsqueda
 # FAISS (opcional para búsqueda rápida)
