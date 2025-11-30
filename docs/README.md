@@ -9,7 +9,7 @@
 
 Desarrollado como proyecto académico para la Universidad Privada Antenor Orrego - Trujillo, Perú.
 
-El sistema integra **5 módulos de IA** para mejorar la experiencia de compra de **productos en tiendas online**:
+El sistema integra **4 módulos de IA** para mejorar la experiencia de compra de **productos en tiendas online**:
 
 1. **🤖 Chatbot Conversacional** - Consultas sobre productos vía chat inteligente
 2. **💬 Análisis de Reseñas de Productos** - Clasificación de sentimientos y detección de fraudes
