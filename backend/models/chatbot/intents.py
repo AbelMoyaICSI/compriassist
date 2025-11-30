@@ -65,25 +65,69 @@ class IntentClassifier:
         }
         
         # Palabras clave para extraer entidades (productos, características, etc.)
-        self.product_keywords = [
-            "zapatos", "zapatillas", "tenis", "botas",
-            "camisa", "camiseta", "polo", "blusa", "vestido", "pantalón", "jeans", "shorts",
-            "laptop", "computadora", "pc", "tablet", "celular", "smartphone", "teléfono",
-            "audífonos", "auriculares", "headphones",
-            "reloj", "smartwatch",
-            "mochila", "bolso", "cartera",
-            "producto", "artículo", "cosa"
+        self.product_keywords = {
+            # Calzado
+            "zapatillas": ["zapatillas", "tenis", "sneakers", "deportivas"],
+            "zapatos": ["zapatos", "calzado"],
+            "botas": ["botas", "botines"],
+            # Ropa
+            "camisa": ["camisa", "camisas"],
+            "camiseta": ["camiseta", "polo", "polera", "remera"],
+            "pantalon": ["pantalón", "pantalones", "jeans", "jean"],
+            "vestido": ["vestido", "vestidos"],
+            "short": ["short", "shorts", "bermuda"],
+            # Electrónica
+            "laptop": ["laptop", "laptops", "notebook", "portátil"],
+            "celular": ["celular", "smartphone", "teléfono", "móvil", "iphone", "samsung"],
+            "tablet": ["tablet", "ipad"],
+            "audifonos": ["audífonos", "auriculares", "headphones", "airpods"],
+            "smartwatch": ["smartwatch", "reloj inteligente", "apple watch"],
+            # Accesorios
+            "mochila": ["mochila", "morral"],
+            "bolso": ["bolso", "cartera", "bolsa"],
+            "reloj": ["reloj", "relojes"]
+        }
+        
+        # Marcas conocidas
+        self.brand_keywords = [
+            "nike", "adidas", "puma", "reebok", "converse", "vans",
+            "apple", "samsung", "xiaomi", "huawei", "motorola", "lg",
+            "hp", "dell", "lenovo", "asus", "acer", "macbook",
+            "sony", "jbl", "bose", "beats",
+            "zara", "h&m", "forever 21", "gap"
         ]
         
         self.color_keywords = [
-            "rojo", "azul", "verde", "amarillo", "negro", "blanco", "gris", "rosa",
-            "morado", "naranja", "café", "beige", "plateado", "dorado"
+            "rojo", "roja", "rojos", "rojas",
+            "azul", "azules",
+            "verde", "verdes",
+            "amarillo", "amarilla", "amarillos", "amarillas",
+            "negro", "negra", "negros", "negras",
+            "blanco", "blanca", "blancos", "blancas",
+            "gris", "grises",
+            "rosa", "rosado", "rosada",
+            "morado", "morada", "violeta",
+            "naranja", "naranjas",
+            "café", "marrón",
+            "beige", "crema",
+            "plateado", "plata",
+            "dorado", "oro"
         ]
         
-        self.size_keywords = [
-            "xs", "s", "m", "l", "xl", "xxl",
-            "pequeño", "mediano", "grande", "chico", "extragrande"
-        ]
+        self.size_keywords = {
+            "ropa": ["xs", "s", "m", "l", "xl", "xxl", "pequeño", "mediano", "grande"],
+            "zapatos": ["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"],
+            "pantallas": ["13", "14", "15", "17", "pulgadas", "\""]
+        }
+        
+        # Características técnicas
+        self.tech_specs = {
+            "memoria": ["ram", "gb ram", "memoria"],
+            "almacenamiento": ["gb", "tb", "ssd", "disco duro", "almacenamiento"],
+            "procesador": ["intel", "amd", "ryzen", "core i3", "core i5", "core i7", "core i9"],
+            "camara": ["cámara", "mp", "megapíxeles", "fotos"],
+            "bateria": ["batería", "mah", "duración"]
+        }
     
     def classify(self, message: str) -> Dict:
         """
@@ -144,16 +188,28 @@ class IntentClassifier:
         """
         entities = {
             "product": None,
+            "product_type": None,
             "color": None,
             "size": None,
             "brand": None,
-            "price_range": None
+            "price_range": None,
+            "tech_specs": {}
         }
         
-        # Buscar productos
-        for product in self.product_keywords:
-            if product in message:
-                entities["product"] = product
+        # Buscar productos (ahora con categorías)
+        for product_type, variations in self.product_keywords.items():
+            for variation in variations:
+                if variation in message:
+                    entities["product"] = variation
+                    entities["product_type"] = product_type
+                    break
+            if entities["product"]:
+                break
+        
+        # Buscar marcas
+        for brand in self.brand_keywords:
+            if brand in message:
+                entities["brand"] = brand
                 break
         
         # Buscar colores
@@ -162,23 +218,63 @@ class IntentClassifier:
                 entities["color"] = color
                 break
         
-        # Buscar tallas
-        for size in self.size_keywords:
-            if size in message:
-                entities["size"] = size
+        # Buscar tallas (contexto específico)
+        if entities["product_type"] in ["camisa", "camiseta", "pantalon", "vestido", "short"]:
+            for size in self.size_keywords["ropa"]:
+                if f" {size} " in f" {message} " or message.endswith(f" {size}"):
+                    entities["size"] = size.upper()
+                    break
+        elif entities["product_type"] in ["zapatillas", "zapatos", "botas"]:
+            for size in self.size_keywords["zapatos"]:
+                if size in message:
+                    entities["size"] = size
+                    break
+        
+        # Buscar especificaciones técnicas
+        for spec_type, keywords in self.tech_specs.items():
+            for keyword in keywords:
+                if keyword in message:
+                    # Extraer valor numérico cercano
+                    pattern = rf"{keyword}\s*(\d+)"
+                    match = re.search(pattern, message)
+                    if match:
+                        entities["tech_specs"][spec_type] = f"{match.group(1)} {keyword}"
+                    else:
+                        entities["tech_specs"][spec_type] = keyword
+                    break
+        
+        # Buscar rangos de precio (mejorado)
+        price_patterns = [
+            r"(\d+)\s*(?:a|hasta|-|y)\s*(\d+)\s*(?:soles|dólares|usd|s/|$|s/\.|dolares)?",
+            r"(?:menos de|máximo|hasta)\s*(\d+)\s*(?:soles|dólares|usd|s/|$)?",
+            r"(?:más de|mínimo|desde)\s*(\d+)\s*(?:soles|dólares|usd|s/|$)?"
+        ]
+        
+        for pattern in price_patterns:
+            match = re.search(pattern, message)
+            if match:
+                if len(match.groups()) == 2 and match.group(2):
+                    entities["price_range"] = {
+                        "min": int(match.group(1)),
+                        "max": int(match.group(2))
+                    }
+                else:
+                    if "menos de" in message or "máximo" in message or "hasta" in message:
+                        entities["price_range"] = {
+                            "min": 0,
+                            "max": int(match.group(1))
+                        }
+                    elif "más de" in message or "mínimo" in message or "desde" in message:
+                        entities["price_range"] = {
+                            "min": int(match.group(1)),
+                            "max": 999999
+                        }
                 break
         
-        # Buscar rangos de precio
-        price_pattern = r"(\d+)\s*(a|hasta|-)\s*(\d+)\s*(soles|dólares|usd|s/|$)?"
-        price_match = re.search(price_pattern, message)
-        if price_match:
-            entities["price_range"] = {
-                "min": int(price_match.group(1)),
-                "max": int(price_match.group(3))
-            }
-        
         # Limpiar entidades nulas
-        entities = {k: v for k, v in entities.items() if v is not None}
+        entities = {k: v for k, v in entities.items() if v}
+        if "tech_specs" in entities and not entities["tech_specs"]:
+            del entities["tech_specs"]
         
         return entities
     
