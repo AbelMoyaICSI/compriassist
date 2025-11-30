@@ -12,10 +12,9 @@ Desarrollado como proyecto académico para la Universidad Privada Antenor Orrego
 El sistema integra **5 módulos de IA** para mejorar la experiencia de compra de **productos en tiendas online**:
 
 1. **🤖 Chatbot Conversacional** - Consultas sobre productos vía chat inteligente
-2. **🎯 Sistema de Recomendación** - Sugerencias personalizadas de productos de catálogo
-3. **💬 Análisis de Reseñas de Productos** - Clasificación de sentimientos y detección de fraudes
-4. **🔍 Búsqueda Visual de Productos** - Encuentra artículos similares subiendo una foto
-5. **✨ IA Generativa** - Descripciones automáticas de productos para el catálogo
+2. **💬 Análisis de Reseñas de Productos** - Clasificación de sentimientos y detección de fraudes
+3. **🔍 Búsqueda Visual de Productos** - Encuentra artículos similares subiendo una foto
+4. **✨ IA Generativa** - Descripciones automáticas de productos para el catálogo
 
 ---
 
