@@ -173,24 +173,10 @@ python backend/server.py
 - [x] Frontend con animaciones
 - [x] Integración de los 5 módulos de IA
 - [x] APIs backend
-- [[x] Sistema de base de datos
-
-### 📋 Pendiente
 - [x] Entrenamiento final de modelos
 - [x] Despliegue en producción
 - [x] Testing completo
 - [x] Documentación técnica detallada
-
----
-
-## 📈 Métricas de Evaluación
-
-Cada módulo será evaluado con métricas específicas:
-
-- **Chatbot**: Precisión en detección de intenciones
-- **Análisis de Reseñas**: Accuracy, F1-score, Precision, Recall
-- **Búsqueda Visual**: Accuracy, Pérdida
-- **IA Generativa**: Evaluación cualitativa
 
 ---
 
