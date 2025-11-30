@@ -24,8 +24,6 @@ El sistema integra **5 módulos de IA** para mejorar la experiencia de compra de
 - Sagastegui Chigne, Teobaldo Hernán
 
 **Integrantes:**
-- Araujo Aguilar, Fabiano
-- Baldeón Julca, Rodrigo Alexander
 - Moya Acosta, Abel
 - Reyes Figueroa, Brandon
 - Salvador Mauricio, Luis Angel
@@ -52,7 +50,6 @@ comprIAssist/
 │   ├── requirements.txt        # Dependencias Python
 │   └── models/                 # Modelos de IA (5 módulos)
 │       ├── chatbot/            # Modelo de chatbot conversacional
-│       ├── recommendation/     # Sistema de recomendación
 │       ├── sentiment/          # Análisis de sentimientos + detector fraude
 │       ├── visual_search/      # Búsqueda visual por imágenes
 │       └── generative/         # IA generativa para descripciones
@@ -90,22 +87,18 @@ comprIAssist/
 - NLTK / SpaCy (procesamiento de lenguaje natural)
 - Streamlit (interfaz web)
 
-**Módulo 2: Sistema de Recomendación**
-- Scikit-learn
-- Algoritmos: Random Forest, K-means, Regresión Logística
-
-**Módulo 3: Análisis de Reseñas**
+**Módulo 2: Análisis de Reseñas**
 - BERT (HuggingFace Transformers)
 - SVM, Naive Bayes
 - Detección de anomalías para reseñas falsas
 
-**Módulo 4: Búsqueda Visual**
+**Módulo 3: Búsqueda Visual**
 - TensorFlow / Keras
 - CNNs (Redes Neuronales Convolucionales)
 - ResNet50 para embeddings visuales
 - Cosine Similarity
 
-**Módulo 5: IA Generativa**
+**Módulo 4: IA Generativa**
 - Modelos Transformer (T5, GPT-like, BERT generativo)
 - Generación de texto para descripciones de productos
 
@@ -130,7 +123,6 @@ Desarrollar un asistente inteligente de compras online que utilice técnicas de 
 ## 🎯 Características Principales
 
 ✅ **Interfaz conversacional** - Chat inteligente para consultas de productos  
-✅ **Recomendaciones personalizadas** - Sugerencias basadas en historial y preferencias  
 ✅ **Análisis de reseñas** - Clasificación de sentimientos (positivo/neutral/negativo)  
 ✅ **Detección de fraudes** - Identificación de reseñas falsas  
 ✅ **Búsqueda por imagen** - Encuentra productos similares con solo una foto  
@@ -197,7 +189,6 @@ python backend/server.py
 Cada módulo será evaluado con métricas específicas:
 
 - **Chatbot**: Precisión en detección de intenciones
-- **Recomendador**: MAP@K, NDCG
 - **Análisis de Reseñas**: Accuracy, F1-score, Precision, Recall
 - **Búsqueda Visual**: Accuracy, Pérdida
 - **IA Generativa**: Evaluación cualitativa
