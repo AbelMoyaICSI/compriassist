@@ -112,11 +112,10 @@ Desarrollar un asistente inteligente de compras online que utilice técnicas de 
 ### Objetivos Específicos
 1. Diseñar arquitectura modular con comunicación vía APIs
 2. Implementar chatbot conversacional con PLN
-3. Desarrollar sistema de recomendación con ML supervisado/no supervisado
-4. Aplicar técnicas de PLN para análisis de sentimientos y detección de fraudes
-5. Implementar búsqueda visual con CNNs
-6. Integrar IA generativa para descripciones automáticas
-7. Realizar pruebas y evaluaciones con métricas estándar
+3. Aplicar técnicas de PLN para análisis de sentimientos y detección de fraudes
+4. Implementar búsqueda visual con CNNs
+5. Integrar IA generativa para descripciones automáticas
+6. Realizar pruebas y evaluaciones con métricas estándar
 
 ---
 
