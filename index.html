@@ -8,27 +8,19 @@
     <meta name="author" content="UPAO - Ingeniería de Sistemas e IA">
     <title>ComprIAssist | Asistente IA para Tiendas de Productos Online</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Estilos propios -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
-    <!-- ============================================ -->
-    <!-- NAVEGACIÓN -->
-    <!-- ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
@@ -57,9 +49,6 @@
         </div>
     </nav>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN HERO -->
-    <!-- ============================================ -->
     <section id="inicio" class="hero">
         <div class="hero-background">
             <div class="gradient-overlay"></div>
@@ -138,9 +127,6 @@
         </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN: MÓDULOS DE IA -->
-    <!-- ============================================ -->
     <section id="modulos" class="modules-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -152,7 +138,6 @@
             </div>
             
             <div class="modules-grid">
-                <!-- Módulo 1: Chatbot -->
                 <div class="module-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="module-icon">
                         <i class="fas fa-comments"></i>
@@ -170,29 +155,7 @@
                     <div class="module-status">
                         <div class="status-bar" style="--progress: 60%"></div>
                     </div>
-                </div>
-                
-                <!-- Módulo 2: Recomendador -->
-                <div class="module-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="module-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3 class="module-title">Sistema de Recomendación</h3>
-                    <p class="module-description">
-                        Recomienda productos del catálogo basándose en preferencias del usuario. 
-                        Algoritmos ML: Random Forest, K-means, Regresión Logística. Métricas MAP@K y NDCG.
-                    </p>
-                    <div class="module-tech">
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Random Forest</span>
-                        <span class="tech-tag">K-means</span>
-                    </div>
-                    <div class="module-status">
-                        <div class="status-bar" style="--progress: 55%"></div>
-                    </div>
-                </div>
-                
-                <!-- Módulo 3: Análisis de Reseñas -->
+                </div>                              
                 <div class="module-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="module-icon">
                         <i class="fas fa-star-half-alt"></i>
@@ -212,7 +175,6 @@
                     </div>
                 </div>
                 
-                <!-- Módulo 4: Búsqueda Visual -->
                 <div class="module-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="module-icon">
                         <i class="fas fa-camera"></i>
@@ -232,7 +194,6 @@
                     </div>
                 </div>
                 
-                <!-- Módulo 5: IA Generativa -->
                 <div class="module-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="module-icon">
                         <i class="fas fa-brain"></i>
@@ -255,9 +216,6 @@
         </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN: CARACTERÍSTICAS -->
-    <!-- ============================================ -->
     <section id="caracteristicas" class="features-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -271,13 +229,7 @@
                     <h3>Consultas Inteligentes</h3>
                     <p>Pregunta sobre productos de forma natural y recibe respuestas precisas</p>
                 </div>
-                
-                <div class="feature-item" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Recomendaciones Personalizadas</h3>
-                    <p>Sugerencias basadas en tus preferencias e historial de compras</p>
-                </div>
-                
+                              
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-smile"></i>
                     <h3>Análisis de Sentimientos</h3>
@@ -317,9 +269,6 @@
         </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN: DEMO INTERACTIVA -->
-    <!-- ============================================ -->
     <section id="demo" class="demo-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -330,9 +279,6 @@
             
             <div class="demo-container">
                 <div class="demo-tabs">
-                    <button class="tab-button active" data-tab="chatbot">
-                        <i class="fas fa-robot"></i> Chatbot
-                    </button>
                     <button class="tab-button" data-tab="sentiment">
                         <i class="fas fa-heart"></i> Sentimientos
                     </button>
@@ -343,44 +289,29 @@
                         <i class="fas fa-magic"></i> Generativa
                     </button>
                 </div>
-                
-                <div class="demo-content">
-                    <!-- Tab: Chatbot -->
-                    <div class="tab-pane active" id="chatbot">
-                        <div class="chatbot-demo">
-                            <div class="chat-messages" id="chatMessages">
-                                <div class="message bot-message">
-                                    <div class="avatar"><i class="fas fa-robot"></i></div>
-                                    <div class="text">¡Hola! Soy CompriAssist. ¿En qué puedo ayudarte hoy?</div>
+                    
+
+                    <div class="demo-content">
+                        <div class="tab-pane" id="sentiment">
+                            <div class="sentiment-demo">
+                                <textarea id="reviewText"
+                                    placeholder="Escribe una reseña del producto para analizar (ej: 'Es un producto increíble, pero el envío tardó mucho')..."
+                                    spellcheck="false"></textarea>
+                        
+                                <button class="analyze-button" id="btnAnalyzeSentiment">
+                                    <i class="fas fa-magic"></i> Analizar con IA
+                                </button>
+                        
+                                <div id="sentimentResult" class="result-box"
+                                    style="display: none; border: none; background: transparent; padding: 0;"></div>
+                        
+                                <div class="demo-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    Modelo Pysentimiento (Transformer) + Detector de Fraude
                                 </div>
                             </div>
-                            <div class="chat-input">
-                                <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí...">
-                                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
-                            </div>
-                            <div class="demo-note">
-                                <i class="fas fa-info-circle"></i> 
-                                Demo simulada - Los modelos reales se integrarán próximamente
-                            </div>
                         </div>
-                    </div>
                     
-                    <!-- Tab: Sentiment Analysis -->
-                    <div class="tab-pane" id="sentiment">
-                        <div class="sentiment-demo">
-                            <textarea id="reviewText" placeholder="Escribe una reseña de producto aquí..."></textarea>
-                            <button class="analyze-button">
-                                <i class="fas fa-chart-bar"></i> Analizar Sentimiento
-                            </button>
-                            <div id="sentimentResult" class="result-box"></div>
-                            <div class="demo-note">
-                                <i class="fas fa-info-circle"></i> 
-                                Modelo BERT con 84% de precisión (en entrenamiento)
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tab: Visual Search -->
                     <div class="tab-pane" id="visual">
                         <div class="visual-demo">
                             <div class="upload-area" id="uploadArea">
@@ -396,29 +327,40 @@
                         </div>
                     </div>
                     
-                    <!-- Tab: Generative AI -->
                     <div class="tab-pane" id="generative">
                         <div class="generative-demo">
-                            <input type="text" id="productName" placeholder="Nombre del producto">
-                            <input type="text" id="productCategory" placeholder="Categoría (ej: ropa, electrónica)">
-                            <button class="generate-button">
-                                <i class="fas fa-wand-magic-sparkles"></i> Generar Descripción
+                            <div class="input-group-vertical"
+                                style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+                                <input type="text" id="productName" placeholder="Nombre del producto (ej: Zapatillas Running)"
+                                    class="form-input">
+                    
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <input type="text" id="productCategory" placeholder="Categoría (ej: ropa, electronica)"
+                                        class="form-input">
+                                    <input type="number" id="productPrice" placeholder="Precio (S/.)" class="form-input">
+                                </div>
+                    
+                                <textarea id="productFeatures" rows="2"
+                                    placeholder="Características (separadas por comas, ej: cuero, impermeable, rojo)" class="form-input"
+                                    style="width: 100%; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;"></textarea>
+                            </div>
+                    
+                            <button class="generate-button" id="btnGenerar">
+                                <i class="fas fa-wand-magic-sparkles"></i> Generar Descripción con IA
                             </button>
-                            <div id="generatedText" class="result-box"></div>
-                            <div class="demo-note">
-                                <i class="fas fa-info-circle"></i> 
-                                Modelo T5/GPT para generación de contenido (en desarrollo)
+                    
+                            <div id="generatedResultContainer" style="display: none; margin-top: 2rem;">
+                                <div id="generatedText" class="result-box"></div>
+                    
+                                <div id="modelBadge"
+                                    style="margin-top: 10px; font-size: 0.8rem; color: #6b7280; display: flex; align-items: center; gap: 5px;">
+                                    <i class="fas fa-robot"></i> <span id="modelUsedName">Modelo: Detectando...</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN: EQUIPO -->
-    <!-- ============================================ -->
     <section id="equipo" class="team-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -435,21 +377,7 @@
                 <p>Sagastegui Chigne, Teobaldo Hernán</p>
             </div>
             
-            <div class="team-grid">
-                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>Fabiano Araujo Aguilar</h4>
-                </div>
-                
-                <div class="team-member" data-aos="fade-up" data-aos-delay="150">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>Rodrigo Alexander Baldeón Julca</h4>
-                </div>
-                
+            <div class="team-grid">               
                 <div class="team-member" data-aos="fade-up" data-aos-delay="200">
                     <div class="member-avatar">
                         <i class="fas fa-user"></i>
@@ -503,9 +431,6 @@
         </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SECCIÓN: CONTACTO -->
-    <!-- ============================================ -->
     <section id="contacto" class="contact-section">
         <div class="container">
             <div class="contact-content">
@@ -563,9 +488,6 @@
         </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- FOOTER -->
-    <!-- ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -616,12 +538,49 @@
         </div>
     </footer>
 
-    <!-- Botón flotante "Volver arriba" -->
+    <button id="chatToggleBtn" class="chat-widget-toggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <div id="chatWidget" class="chat-widget-container">
+        <div class="chat-widget-header">
+            <div class="header-details">
+                <div class="status-dot"></div>
+                <div class="header-text">
+                    <h3>ComprIAssist</h3>
+                    <span>En línea | IA Activa</span>
+                </div>
+            </div>
+            <button id="closeChatBtn" class="header-close">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <div id="chatMessages" class="chat-widget-messages">
+            <div class="message bot-message">
+                <div class="avatar"><i class="fas fa-robot"></i></div>
+                <div class="message-content">
+                    ¡Hola! 👋 Soy el asistente virtual de la tienda.
+                    <br><br>
+                    Puedo ayudarte a buscar productos, ver ofertas o analizar reseñas. ¿Qué necesitas?
+                </div>
+            </div>
+        </div>
+
+        <div id="suggestionsArea" class="chat-widget-suggestions"></div>
+
+        <div class="chat-widget-input">
+            <input type="text" id="userInput" placeholder="Escribe tu consulta..." autocomplete="off">
+            <button id="sendBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <button id="scrollTop" class="scroll-top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- AOS (Animate On Scroll) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -631,7 +590,6 @@
         });
     </script>
     
-    <!-- Script principal -->
     <script src="js/main.js"></script>
 </body>
 </html>
